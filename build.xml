@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="build">
+
+<!-- APPLICATION METADATA -->
+<property name="masysma.target" value="pressed_keys"/> 
+<property name="masysma.main"   value="ma.keys.Main"/> 
+<property name="mdpc.name"      value="mdvl-pressed-keys"/>
+<property name="mdpc.section"   value="games"/>
+<property name="mdpc.arch"      value="all"/>
+<property name="mdpc.descrs"    value="Check number of keys simultaneously pressable"/>
+<property name="mdpc.descrl">
+ pressed_keys allows the number of keys which can be pressed simultaneously to
+ be determined. It provides a simple Java application which displays the keys
+ currently pressed (up to 12).
+</property>
+
+<property name="mdpc.file.install">
+pressed_keys /usr/bin
+pressed_keys.jar /usr/share/java
+</property>
+
+<target name="build" depends="jar"/>
+
+<!-- CI INTEGRATION -->
+<target name="package_triggered" depends="package">
+	<property name="masysma.ci.trigger" value="newver"/>
+</target>
+
+<!-- CONSTANT TPL IMPORT -->
+<property environment="env"/>
+<condition property="masysma.internal.includepath.rel" value="${env.MDVL_CI_PHOENIX_ROOT}" else=".."><isset property="env.MDVL_CI_PHOENIX_ROOT"/></condition>
+<property name="masysma.internal.includepath" location="${masysma.internal.includepath.rel}"/>
+<property name="masysma.internal.loadpath" value="${masysma.internal.includepath}/co-build/ant-build-template.xml"/>
+<condition property="masysma.internal.load" value="file://${masysma.internal.loadpath}" else="https://raw.githubusercontent.com/m7a/co-build/master/ant-build-template.xml"><resourceexists><file file="${masysma.internal.loadpath}"/></resourceexists></condition>
+<import><url url="${masysma.internal.load}"/></import>
+
+</project>
