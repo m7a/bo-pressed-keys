@@ -1,0 +1,8 @@
+LANG    = java
+TARGET  = pressed_keys.jar
+RES     = ma
+MAIN    = ma.keys.Main
+SECTION = 33
+
+include /usr/share/mdvl/make.mk
+include /data/main/man/web/external/inc.mk
