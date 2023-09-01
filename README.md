@@ -8,7 +8,7 @@ author: ["Linux-Fan, Ma_Sys.ma (Ma_Sys.ma@web.de)"]
 keywords: ["programs", "java", "pressedkeys"]
 x-masysma-version: 1.0.0
 x-masysma-repository: https://www.github.com/m7a/bo-pressed-keys
-x-masysma-website: https://masysma.lima-city.de/32/pressed_keys.xhtml
+x-masysma-website: https://masysma.net/32/pressed_keys.xhtml
 x-masysma-owned: 1
 x-masysma-copyright: |
   Copyright (c) 2014, 2020 Ma_Sys.ma.
